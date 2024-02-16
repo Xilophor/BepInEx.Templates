@@ -19,12 +19,19 @@
       "defaultValue": "net6.0",
       "replaces": "net6.0"
     },
-    "Description": {
+    "PluginTitle": {
       "type": "parameter",
-      "description": "Plugin description",
-      "datatype": "text",
-      "replaces": "My first plugin",
-      "defaultValue": "My first plugin"
+      "description": "The title of the plugin.",
+      "datatype": "text"
+    },
+    "PluginTitleGen": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "PluginTitle",
+        "fallbackVariableName": "name"
+      },
+      "replaces": "{Product}"
     },
     "Version": {
       "type": "parameter",
